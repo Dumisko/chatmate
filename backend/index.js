@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 app.use(cookieParser());
 const corsOption={
-    origin:'https://vercel.com/saikats-projects-06694ec2/chatmate/GuJqsirV6Kn4tkRywKmwjWhUiGtg',
+    origin:'https://chatmate-zeta.vercel.app',
     credentials:true
 };
 app.use(cors(corsOption)); 
