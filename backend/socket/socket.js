@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors:{
-        origin:['https://vercel.com/saikats-projects-06694ec2/chatmate/51wErCp93dSv1WMRntUf5P3T8bJa'],
+        origin:['https://chatmate-zeta.vercel.app'],
         methods:['GET', 'POST'],
     },
 });
