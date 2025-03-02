@@ -83,6 +83,10 @@ export const logout = (req, res) => {
         console.log(error);
     }
 }
+
+// old code 
+
+/*
 export const getOtherUsers = async (req, res) => {
     try {
         const loggedInUserId = req.id;
@@ -92,3 +96,20 @@ export const getOtherUsers = async (req, res) => {
         console.log(error);
     }
 }
+    */
+
+// new code 
+export const getOtherUsers = async (req, res) => {
+    try {
+        const loggedInUserId = req.id;
+        if (!loggedInUserId) {
+            return res.status(400).json({ error: 'Logged-in user ID is required' });
+        }
+
+        const otherUsers = await User.find({ _id: { $ne: loggedInUserId } }).select("-password");
+        return res.status(200).json(otherUsers);
+    } catch (error) {
+        console.error('Error fetching other users:', error);
+        return res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
