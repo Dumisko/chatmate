@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 app.use(cookieParser());
 const corsOption={
-    origin:'http://localhost:3000',
+    origin:'https://vercel.com/saikats-projects-06694ec2/chatmate/GuJqsirV6Kn4tkRywKmwjWhUiGtg',
     credentials:true
 };
 app.use(cors(corsOption)); 
